@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+*.egg
+env/
+
+# Flask
+instance/
+*.pyc
+
+# MongoDB
+*.log
+*.mdb
+*.ns
+*.bson
+
+# Docker
+docker-compose.yml
+docker-compose.override.yml
+docker-compose*.yml
+*.log
+*.pid
+*.out
+*.db
+*.env
+*.pyc
+*.pyo
+*.egg-info/
+*.egg
+*.dockerignore
+.docker/
+
+#Visual Studio Code
+.vscode/
