@@ -9,7 +9,9 @@ Jinja2==3.1.2
 MarkupSafe==2.1.2
 packaging==23.0
 pluggy==1.0.0
+pydantic==1.10.7
 pymongo==4.3.3
 pytest==7.2.2
 tomli==2.0.1
+typing_extensions==4.5.0
 Werkzeug==2.2.3
