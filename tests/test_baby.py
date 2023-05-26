@@ -1,15 +1,24 @@
+import os
 import json
 import pytest
-from babym.app import app, babies_collection
-from babym.models.baby import Baby
 
+from babym.app import app
+from babym.models.baby import Baby
+from babym.mongo import BabymMongoClient
+from babym.environments import Environments
+
+babym_mongo_client = BabymMongoClient()
+babies_collection = babym_mongo_client.babies_collection
 
 @pytest.fixture
 def client():
+    if os.environ.get('BABYM_ENV') != Environments.test:
+        raise Exception("BABYM_ENV should be set to TEST")
     app.config['TESTING'] = True
-
     with app.test_client() as client:
         yield client
+    babies_collection.delete_many({})
+    
 
 
 def test_create_baby(client):

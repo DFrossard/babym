@@ -3,9 +3,11 @@ from flask import Blueprint, request, jsonify
 from bson import ObjectId
 
 from babym.models.baby import Baby
-from babym.app import babies_collection
+from babym.mongo import BabymMongoClient
 
 baby_controller = Blueprint('baby_controller', __name__)
+baby_mongo_client = BabymMongoClient()
+babies_collection = baby_mongo_client.babies_collection
 
 @baby_controller.route('/baby', methods=['POST'])
 def create_baby():
