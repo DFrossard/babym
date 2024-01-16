@@ -7,6 +7,8 @@ dist/
 build/
 *.egg
 env/
+.DS_Store
+.python-version
 
 # Flask
 instance/

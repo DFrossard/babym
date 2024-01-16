@@ -25,3 +25,4 @@ class BabymMongoClient():
             self.baby_db = self.client['test_baby_db']
         
         self.babies_collection = self.baby_db['babies']
+        self.parents_collection = self.baby_db['parents']

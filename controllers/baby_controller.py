@@ -69,7 +69,7 @@ def update_baby(baby_id):
         # Update the Baby object in the MongoDB collection
         babies_collection.update_one({'_id': ObjectId(baby_id)}, {'$set': baby_dict})
 
-        # Return a JSON response with the updated Baby object and a 200 status code
+        # Return a JSON response with the updated Baby object and a 204 status code
         baby_dict['_id'] = str(baby_dict['_id'])
         return jsonify(baby_dict), 200
 
